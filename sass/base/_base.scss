@@ -1,4 +1,4 @@
-/* GENERAL RULES */
+/* GENERAL*/
 html {
     box-sizing: border-box;
 }
@@ -55,20 +55,4 @@ ul {
     text-align: center;
 
     color: var(--brand-black-color);
-}
-
-.link {
-    color: var(--brand-black-color);
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-}
-
-/* hover and focus for links */
-.link:hover,
-.link:focus,
-.link:active {
-    color: var(--brand-color);
 }
