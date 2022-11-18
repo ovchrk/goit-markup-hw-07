@@ -1,0 +1,74 @@
+/* GENERAL RULES */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+}
+
+body {
+    color: var(--brand-black-color);
+    background-color: var(--color-background);
+    margin: 0;
+    font-family: var(--main-font);
+    letter-spacing: var(--main-letter-spacing);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.section__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+
+    color: var(--brand-black-color);
+}
+
+.link {
+    color: var(--brand-black-color);
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+/* hover and focus for links */
+.link:hover,
+.link:focus,
+.link:active {
+    color: var(--brand-color);
+}
