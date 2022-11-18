@@ -7,17 +7,13 @@
     border-radius: 4px;
 
     transition: border 250ms var(--timing-function);
+    &:hover, &:focus {
+        border: 1px solid #2196F3;
+    }    
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
-
-.partners__item:hover,
-.partners__item:focus {
-    border: 1px solid #2196F3;
-}
-
-.partners__item:not(:last-child) {
-    margin-right: 30px;
-}
-
 .partners__link {
     display: flex;
     width: 170px;
@@ -30,11 +26,9 @@
     fill: var(--icon-color-grey);
 
     transition: fill 250ms var(--timing-function);
-}
-
-.partners__link:hover,
-.partners__link:focus {
-    fill: var(--brand-color);
+    &:hover, &:focus {
+        fill: var(--brand-color);
+    }
 }
 
 .partners__icon {

@@ -636,11 +636,13 @@ ul {
 .buttons__item {
   display: inline-block;
 }
-
 .buttons__item:not(:last-child) {
   margin-right: 8px;
 }
 
+/*.buttons__item:not(:last-child) {
+    margin-right: 8px;
+}*/
 .buttons__btn {
   font-family: var(--main-font);
   font-weight: 500;
@@ -656,14 +658,19 @@ ul {
   cursor: pointer;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.buttons__btn:hover,
-.buttons__btn:focus {
+.buttons__btn:hover, .buttons__btn:focus {
   background-color: var(--brand-color);
   color: var(--color-background);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+/*
+.buttons__btn:hover,
+.buttons__btn:focus {
+    background-color: var(--brand-color);
+    color: var(--color-background);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}*/
 /*examples*/
 .examples {
   display: flex;
@@ -679,20 +686,9 @@ ul {
   margin-bottom: 30px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.examples__item:hover,
-.examples__item:focus {
+.examples__item:hover, .examples__item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
-.examples__item:hover .examples__overlay {
-  transform: translateY(0);
-}
-
-.examples__item:focus .examples__overlay {
-  transform: translateY(0);
-}
-
 .examples__item:nth-child(3n) {
   margin-right: 0;
 }
@@ -713,7 +709,17 @@ ul {
   transform: translateY(102%);
   transition: transform 250ms var(--timing-function);
 }
+.examples__item:hover .examples__overlay, .examples__item:focus .examples__overlay {
+  transform: translateY(0);
+}
 
+/*
+.examples__item:hover .examples__overlay {
+    transform: translateY(0);
+}
+.examples__item:focus .examples__overlay {
+    transform: translateY(0);
+}*/
 .examples__img {
   display: block;
 }
@@ -759,13 +765,13 @@ ul {
   transition: opacity 250ms var(--timing-function);
 }
 
-.modal__backdrop .modal__backdrop--is-hidden {
+.modal__backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: visible;
 }
 
-.modal__backdrop.modal__backdrop--is-hidden .modal {
+.modal__backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
@@ -839,7 +845,23 @@ ul {
   border-radius: 4px;
   transition: border 250ms var(--timing-function);
 }
+.form__item:focus-within > .form__input {
+  border: 1px solid var(--brand-color);
+}
+.form__item:hover .form__input, .form__item:focus .form__input {
+  border: 1px solid var(--brand-color);
+}
+.form__input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
 
+/*.form__item:focus-within>.form__input {
+    border: 1px solid var(--brand-color);
+}*/
 .form__icon {
   display: inline-block;
   position: absolute;
@@ -849,31 +871,11 @@ ul {
   height: 18px;
   transition: fill 250ms var(--timing-function);
 }
-
-.form__item:focus-within > .form__input {
-  border: 1px solid var(--brand-color);
-}
-
 .form__item:focus-within > .form__icon {
   fill: var(--brand-color);
 }
-
-.form__item:hover .form__input,
-.form__item:hover .form__textarea {
-  border: 1px solid var(--brand-color);
-}
-
 .form__item:hover .form__icon {
   fill: var(--brand-color);
-}
-
-.form__input::placeholder,
-.form__textarea::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
 }
 
 .form__checkbox {
@@ -927,16 +929,10 @@ ul {
   border-radius: 2px;
   transition: background-image 250ms var(--timing-function);
 }
-
 .form__checkbox-input:checked + .form__checkbox-icon {
   background-image: url(../images/icon-check.svg);
 }
 
-/*.icon-check {
-    width: 16px;
-    height: 15px;
-    fill: transparent;
-}*/
 .form__textarea {
   resize: none;
   outline: none;
@@ -950,6 +946,16 @@ ul {
   letter-spacing: 0.01em;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  color: rgba(117, 117, 117, 0.5);
+}
+.form__item:hover .form__textarea, .form__item:focus .form__textarea {
+  border: 1px solid var(--brand-color);
+}
+.form__textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 

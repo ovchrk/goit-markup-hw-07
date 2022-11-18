@@ -9,13 +9,13 @@
     transition: opacity 250ms var(--timing-function);
 }
 
-.modal__backdrop .modal__backdrop--is-hidden {
+.modal__backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
     visibility: visible;
 }
 
-.modal__backdrop.modal__backdrop--is-hidden .modal {
+.modal__backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
@@ -96,8 +96,25 @@
     border-radius: 4px;
 
     transition: border 250ms var(--timing-function);
+    
+    .form__item:focus-within>& {
+        border: 1px solid var(--brand-color);
+    }
+    .form__item:hover &, .form__item:focus & {
+        border: 1px solid var(--brand-color);
+    }
+    &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.01em;
+        
+        color: rgba(117, 117, 117, 0.5);
+    }
 }
-
+/*.form__item:focus-within>.form__input {
+    border: 1px solid var(--brand-color);
+}*/
 .form__icon {
     display: inline-block;
     position: absolute;
@@ -107,33 +124,13 @@
     height: 18px;
 
     transition: fill 250ms var(--timing-function);
-}
 
-.form__item:focus-within>.form__input {
-    border: 1px solid var(--brand-color);
-}
-
-.form__item:focus-within>.form__icon {
-    fill: var(--brand-color);
-}
-
-.form__item:hover .form__input,
-.form__item:hover .form__textarea {
-    border: 1px solid var(--brand-color);
-}
-
-.form__item:hover .form__icon {
-    fill: var(--brand-color);
-}
-
-.form__input::placeholder,
-.form__textarea::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-
-    color: rgba(117, 117, 117, 0.5);
+    .form__item:focus-within>& {
+        fill: var(--brand-color);
+    }
+    .form__item:hover & {
+        fill: var(--brand-color);
+    }
 }
 
 .form__checkbox {
@@ -186,17 +183,11 @@
     height: 15px;
     border-radius: 2px;
     transition: background-image 250ms var(--timing-function);
-}
 
-.form__checkbox-input:checked+.form__checkbox-icon {
-    background-image: url(../images/icon-check.svg);
+    .form__checkbox-input:checked+& {
+        background-image: url(../images/icon-check.svg);
+    } 
 }
-
-/*.icon-check {
-    width: 16px;
-    height: 15px;
-    fill: transparent;
-}*/
 .form__textarea {
     resize: none;
     outline: none;
@@ -213,6 +204,18 @@
     border-radius: 4px;
 
     color: rgba(117, 117, 117, 0.5);
+
+    .form__item:hover &, .form__item:focus & {
+        border: 1px solid var(--brand-color);
+    }
+    &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.01em;
+        
+        color: rgba(117, 117, 117, 0.5);
+    }
 }
 
 .form__btn-submit {
