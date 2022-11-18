@@ -9,13 +9,13 @@
     transition: opacity 250ms var(--timing-function);
 }
 
-.modal__backdrop.modal__backdrop--ishidden {
+.modal__backdrop .modal__backdrop--is-hidden {
     opacity: 0;
     pointer-events: none;
     visibility: visible;
 }
 
-.modal__backdrop--ishidden .modal {
+.modal__backdrop.modal__backdrop--is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
@@ -34,7 +34,7 @@
     transform: translate(-50%, -50%) scale(1);
 
     transition: transform 250ms var(--timing-function),
-        scale 250ms var(--timing-function);
+    scale 250ms var(--timing-function);
 
 }
 
@@ -52,11 +52,9 @@
     fill: #000000;
     transition: fill 250ms var(--timing-function);
     padding: 5px;
-}
-
-.modal__btn-close:hover,
-.modal__btn-close:focus {
-    fill: var(--brand-color)
+    &:hover, &:focus {
+        fill: var(--brand-color)
+    }
 }
 
 /*form*/

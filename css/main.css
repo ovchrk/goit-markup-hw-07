@@ -171,13 +171,7 @@ ul {
   color: var(--color-text);
   transition: color 250ms var(--timing-function);
 }
-
-.contacts__link:hover,
-.contacts__link:focus,
-.contacts__linl:active,
-.contacts__link:focus .contacts__icon,
-.contacts__link:hover .contacts__icon,
-.contacts__link:active .contacts__icon {
+.contacts__link:hover, .contacts__link:focus, .contacts__link:active {
   color: var(--brand-color);
   fill: var(--brand-color);
 }
@@ -191,7 +185,18 @@ ul {
   fill: currentColor;
   cursor: pointer;
 }
+.contacts__link:hover .contacts__icon, .contacts__link:focus .contacts__icon {
+  color: var(--brand-color);
+  fill: var(--brand-color);
+}
 
+/*
+.contacts__link:focus .contacts__icon,
+.contacts__link:hover .contacts__icon,
+.contacts__link:active .contacts__icon {
+    color: var(--brand-color);
+    fill: var(--brand-color);
+}*/
 .hero__overlay {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -265,7 +270,6 @@ ul {
   width: 270px;
   display: inline-block;
 }
-
 .advantages__item:not(:last-child) {
   margin-right: 30px;
 }
@@ -755,13 +759,13 @@ ul {
   transition: opacity 250ms var(--timing-function);
 }
 
-.modal__backdrop.modal__backdrop--ishidden {
+.modal__backdrop .modal__backdrop--is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: visible;
 }
 
-.modal__backdrop--ishidden .modal {
+.modal__backdrop.modal__backdrop--is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
@@ -793,9 +797,7 @@ ul {
   transition: fill 250ms var(--timing-function);
   padding: 5px;
 }
-
-.modal__btn-close:hover,
-.modal__btn-close:focus {
+.modal__btn-close:hover, .modal__btn-close:focus {
   fill: var(--brand-color);
 }
 

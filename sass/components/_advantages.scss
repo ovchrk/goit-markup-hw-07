@@ -20,10 +20,9 @@
 .advantages__item {
     width: 270px;
     display: inline-block;
-}
-
-.advantages__item:not(:last-child) {
-    margin-right: 30px;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
 .advantages__box {

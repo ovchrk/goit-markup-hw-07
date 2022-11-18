@@ -7,8 +7,10 @@
     flex-wrap: wrap;
 }
 
-.activity__item:not(:last-child) {
-    margin-right: 30px;
+.activity__item {
+    &:not(:last-child) {
+        margin-right: 30px;
+    } 
 }
 
 .activity__item {
