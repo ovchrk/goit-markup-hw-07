@@ -1,39 +1,3 @@
-/* GENERAL*/
-html {
-    box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-:not(svg) {
-    transform-origin: 0px 0px;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style-type: none;
-    display: flex;
-}
-
-body {
-    color: var(--brand-black-color);
-    background-color: var(--color-background);
-    margin: 0;
-    font-family: var(--main-font);
-    letter-spacing: var(--main-letter-spacing);
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
 .container {
     width: 1200px;
     margin-left: auto;
@@ -41,6 +5,7 @@ ul {
     padding-right: 15px;
     padding-left: 15px;
 }
+
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
