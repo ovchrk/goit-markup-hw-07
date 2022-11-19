@@ -14,7 +14,29 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* GENERAL RULES */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section__title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--brand-black-color);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -51,42 +73,26 @@ ul {
   padding: 0;
 }
 
-.container {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+.hidden-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+.header {
+  border-bottom: 1px solid #ECECEC;
 }
 
-.section__title {
-  margin-top: 0;
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-  color: var(--brand-black-color);
-}
-
-.link {
-  color: var(--brand-black-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
-/* hover and focus for links */
-.link:hover,
-.link:focus,
-.link:active {
-  color: var(--brand-color);
+.header__nav {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -106,12 +112,6 @@ ul {
   display: inline-block;
   margin-bottom: 20px;
   color: var(--color-background);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ECECEC;
 }
 
 .social-links {
@@ -135,11 +135,13 @@ ul {
   letter-spacing: 0.02em;
   transition: color 250ms var(--timing-function);
 }
+.social-links__link:hover, .social-links__link:focus, .social-links__link:active {
+  color: var(--brand-color);
+}
 
 .social-links__link--current {
   color: var(--brand-color);
 }
-
 .social-links__link--current::after {
   position: absolute;
   content: "";
@@ -150,12 +152,6 @@ ul {
   bottom: -1px;
   background-color: var(--brand-color);
   border-radius: 3px;
-}
-
-.social-links__link:hover,
-.social-links__link:focus,
-.social-links__link:active {
-  color: var(--brand-color);
 }
 
 .contacts {
@@ -169,6 +165,10 @@ ul {
   align-items: center;
   justify-content: space-between;
   color: var(--color-text);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
   transition: color 250ms var(--timing-function);
 }
 .contacts__link:hover, .contacts__link:focus, .contacts__link:active {
@@ -251,19 +251,6 @@ ul {
 .advantages {
   display: flex;
   flex-wrap: wrap;
-}
-
-.advantages__hidden-title, .examples__hidden-title {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .advantages__item {
@@ -361,7 +348,6 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-
 .team__item:not(:last-child) {
   margin-right: 30px;
 }
@@ -413,9 +399,7 @@ ul {
   fill: var(--icon-color-grey);
   transition: fill 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
-
-.team__link:hover,
-.team__link:focus {
+.team__link:hover, .team__link:focus {
   background-color: #2196F3;
   fill: #fff;
 }
@@ -429,12 +413,9 @@ ul {
   border-radius: 4px;
   transition: border 250ms var(--timing-function);
 }
-
-.partners__item:hover,
-.partners__item:focus {
+.partners__item:hover, .partners__item:focus {
   border: 1px solid #2196F3;
 }
-
 .partners__item:not(:last-child) {
   margin-right: 30px;
 }
@@ -450,9 +431,7 @@ ul {
   fill: var(--icon-color-grey);
   transition: fill 250ms var(--timing-function);
 }
-
-.partners__link:hover,
-.partners__link:focus {
+.partners__link:hover, .partners__link:focus {
   fill: var(--brand-color);
 }
 
@@ -502,9 +481,7 @@ ul {
   color: var(--color-links);
   transition: color 250ms var(--timing-function);
 }
-
-.info__link:hover,
-.info__link:focus {
+.info__link:hover, .info__link:focus {
   color: var(--brand-color);
 }
 
@@ -537,10 +514,7 @@ ul {
   background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 250ms var(--timing-function);
 }
-
-.socials__link:hover,
-.socials__link:focus,
-.socials__link:active {
+.socials__link:hover, .socials__link:focus, .socials__link:active {
   background-color: var(--brand-color);
 }
 
@@ -620,7 +594,6 @@ ul {
   background-color: transparent;
   color: var(--color-background);
 }
-
 .subscription__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }

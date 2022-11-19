@@ -28,8 +28,9 @@
 }
 .info__item {
     &:not(:last-child) {
-            display: inline-block;
-            margin-bottom: 9px;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
 }
 
 .info__link {
@@ -148,6 +149,6 @@
     background-color: transparent;
     color: var(--color-background);
     &::placeholder {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.6)
     }
 }
